@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+<div id="input-box" class="inbx">
+        <h1 class="Heading">Api_Testing</h1>
+        <time id="tim">Current-Time</time><br /><br />
+        <input id="pnr" placeholder="Enter Pnr no."><br /><br />
+        <button id="submit" >Click</button>
+        <div id="hell"></div>
+        <!-- <button type="submit" onsubmit="fun()"></button> -->
+    </div>
+</body>
+<script>
+$(document).on("click", "#submit",function() {
+    $.get("unirest_api",{
+    	'name':"Hardy"
+    }).done(function(response) {   
+    	$("#tim").html(response);
+    });
+});
+</script>
+</html>
